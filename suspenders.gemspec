@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'rails', '4.0.1'
   s.add_development_dependency 'aruba', '~> 0.5.2'
   s.add_development_dependency 'cucumber', '~> 1.2'
-  s.authors = ['thoughtbot']
+  s.authors = ['thoughtbot', 'opoloo']
   s.date = Date.today.strftime('%Y-%m-%d')
 
   s.description = <<-HERE
@@ -22,7 +22,7 @@ rush to build something amazing; don't use it if you like missing deadlines.
   s.executables = `git ls-files -- bin/*`.split("\n").map { |file| File.basename(file) }
   s.extra_rdoc_files = %w[README.md LICENSE]
   s.files = `git ls-files`.split("\n")
-  s.homepage = 'http://github.com/thoughtbot/suspenders'
+  s.homepage = 'http://github.com/opoloo/suspenders'
   s.license = 'MIT'
   s.name = 'suspenders'
   s.rdoc_options = ['--charset=UTF-8']
