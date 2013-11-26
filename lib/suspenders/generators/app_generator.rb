@@ -3,7 +3,7 @@ require 'rails/generators/rails/app/app_generator'
 
 module Suspenders
   class AppGenerator < Rails::Generators::AppGenerator
-    class_option :database, :type => :string, :aliases => '-d', :default => 'postgresql',
+    class_option :database, :type => :string, :aliases => '-d', :default => 'mysql',
       :desc => "Preconfigure for selected database (options: #{DATABASES.join('/')})"
 
     class_option :heroku, :type => :boolean, :aliases => '-H', :default => false,
@@ -57,6 +57,10 @@ module Suspenders
 
       if 'postgresql' == options[:database]
         build :use_postgres_config_template
+      end
+
+      if 'mysql' == options[:database]
+        build :use_mysql_config_template
       end
 
       build :create_database
@@ -116,7 +120,7 @@ module Suspenders
       build :configure_rack_timeout
       build :disable_xml_params
       build :setup_default_rake_task
-      build :configure_unicorn
+      #build :configure_unicorn
       build :setup_foreman
     end
 
